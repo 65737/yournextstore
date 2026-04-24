@@ -2,11 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	/* config options here */
+	// 建议添加 output: "standalone" 以获得更好的兼容性
+	// output: "standalone", 
+	
 	allowedDevOrigins: ["*.vercel.run", "*.yns.store", "*.yns.cx"],
 	reactCompiler: true,
 	cacheComponents: true,
 	experimental: {
-		useCache: true, // 核心修复：开启报错提示的实验性缓存功能
+		// 在 Cloudflare 上暂时关闭实验性 useCache，以消除大量的 .prefetch 报错
+		// useCache: true, 
 		typedEnv: true,
 		optimizePackageImports: [
 			"lucide-react",
