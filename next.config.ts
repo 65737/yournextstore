@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 	reactCompiler: true,
 	cacheComponents: true,
 	experimental: {
+		useCache: true, // 核心修复：开启报错提示的实验性缓存功能
 		typedEnv: true,
 		optimizePackageImports: [
 			"lucide-react",
